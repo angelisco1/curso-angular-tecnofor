@@ -1,0 +1,6 @@
+<h2>Comunicación entre componentes</h2>
+<h3>Soy ...</h3>
+<p>Mi hija es: {{leia.nombre}} {{leia.apellido}}</p>
+
+<app-cmp-leia [misDatos]="leia" (apellidoCambiado)="cambiarApellidoLeia($event)"></app-cmp-leia>
+<app-cmp-luke [datosLeia]="leia"></app-cmp-luke>

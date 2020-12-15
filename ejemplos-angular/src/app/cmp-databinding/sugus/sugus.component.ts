@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SugusComponent implements OnInit {
 
-  @Input() sabor = "limón"
+  @Input('sabor') flavour = "limón"
   @Input() color = "yellow"
   size = '100px'
 
