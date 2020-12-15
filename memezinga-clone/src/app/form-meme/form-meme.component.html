@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <input type="text" name="texto1" [value]="meme.texto1" (input)="cambiarMeme($event)">
+  </div>
+  <div>
+    <input type="text" name="texto2" [value]="meme.texto2" (input)="cambiarMeme($event)">
+  </div>
+  <div>
+    <input type="text" name="urlImagen" [value]="meme.urlImagen" (input)="cambiarMeme($event)">
+  </div>
+  <div>
+    <input type="color" name="color" [value]="meme.color" (input)="cambiarMeme($event)">
+  </div>
+  <button type="button">Guardar</button>
+</div>

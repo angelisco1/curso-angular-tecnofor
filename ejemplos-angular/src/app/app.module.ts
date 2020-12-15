@@ -9,6 +9,10 @@ import { SugusComponent } from './cmp-databinding/sugus/sugus.component';
 import { CmpAnakinComponent } from './cmp-anakin/cmp-anakin.component';
 import { CmpLeiaComponent } from './cmp-anakin/cmp-leia/cmp-leia.component';
 import { CmpLukeComponent } from './cmp-anakin/cmp-luke/cmp-luke.component';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { DoblePipe } from './cmp-pipes/doble.pipe';
+import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
+import { ReversePipe } from './cmp-pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { CmpLukeComponent } from './cmp-anakin/cmp-luke/cmp-luke.component';
     SugusComponent,
     CmpAnakinComponent,
     CmpLeiaComponent,
-    CmpLukeComponent
+    CmpLukeComponent,
+    CmpPipesComponent,
+    DoblePipe,
+    HideWordsPipe,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

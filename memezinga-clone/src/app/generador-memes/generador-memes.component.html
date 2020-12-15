@@ -1,0 +1,8 @@
+<h2>Crear tu meme</h2>
+
+<app-meme [meme]="meme"></app-meme>
+
+<app-form-meme
+  [meme]="meme"
+  (propCambiada)="actualizarMeme($event)"
+></app-form-meme>

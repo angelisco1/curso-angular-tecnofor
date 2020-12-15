@@ -1,0 +1,21 @@
+<h2>Pipes</h2>
+
+<p>{{ texto }}</p>
+<p>{{ texto | uppercase }}</p>
+<p>{{ texto | lowercase }}</p>
+<p>{{ texto | titlecase }}</p>
+<p>{{ texto | slice:5:11 | uppercase }}</p>
+
+<p>Precio: {{ precio }}</p>
+<p>Precio: {{ precio | currency }}</p>
+<p>Precio: {{ precio | currency:'EUR' }}</p>
+<p>Precio: {{ precio | doble }}</p>
+<p>Precio: {{ precio | doble:7:3 }}</p>
+
+<p>Fecha: {{ fechaNacimiento }}</p>
+<p>Fecha: {{ fechaNacimiento | date }}</p>
+<p>Fecha: {{ fechaNacimiento | date:'dd/MM/yyyy' }}</p>
+
+<p>Persona: {{ persona }}</p>
+<p>Persona: {{ persona | json }}</p>
+<p>Persona: {{ persona | keyvalue | json }}</p>
