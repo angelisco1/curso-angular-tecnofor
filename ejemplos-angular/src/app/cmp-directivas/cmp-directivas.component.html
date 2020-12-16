@@ -1,0 +1,75 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p class="letraNaranja fondoNegro">Texto en fondo negro y letra de color naranja</p>
+<p [ngClass]="{ letraNaranja: letraNaranjaActivada, fondoNegro: true }">Texto en fondo negro y letra de color naranja</p>
+<button type="button" (click)="toggleLetraNaranja()">Toggle letraNaranja</button>
+<!-- ngStyle -->
+<!-- ngModel -->
+
+
+<button appBlink="red">El texto parpadea</button>
+
+<p appBlink="red">El texto parpadea</p>
+<p appBlink="orange">El texto parpadea</p>
+<p appBlink>El texto parpadea</p>
+<p [appBlink]="color">El texto parpadea</p>
+
+
+
+<h3>Estructurales</h3>
+
+<button type="button" (click)="toggleLogueado()">Login / Logout</button>
+
+<!-- <div *ngIf="logueado">
+  <h4>Bienvenido usuario...</h4>
+  <p>No te pierdas las últimas novedades...</p>
+</div>
+<div *ngIf="!logueado">
+  <h4>Usuario logueate</h4>
+</div> -->
+
+<!-- <div *ngIf="logueado; else elseDeLogueado">
+  <h4>Bienvenido usuario...</h4>
+  <p>No te pierdas las últimas novedades...</p>
+</div>
+<ng-template #elseDeLogueado>
+  <div>
+    <h4>Usuario logueate</h4>
+  </div>
+</ng-template> -->
+
+<div *ngIf="logueado; then ifDeLogueado else elseDeLogueado"></div>
+<ng-template #ifDeLogueado>
+  <div>
+    <h4>Bienvenido usuario...</h4>
+    <p>No te pierdas las últimas novedades...</p>
+  </div>
+</ng-template>
+<ng-template #elseDeLogueado>
+  <div>
+    <h4>Usuario logueate</h4>
+  </div>
+</ng-template>
+
+<div>
+  <li *ngFor="let s of sugus; let posicion = index">
+    {{posicion + 1}}
+    <app-sugus [sabor]="s.sabor" [color]="s.color"></app-sugus>
+  </li>
+</div>
+
+<input type="text" [(ngModel)]="color">
+<!-- <div [ngSwitch]="color">
+  <app-sugus *ngSwitchCase="sugus[0].color" [sabor]="sugus[0].sabor" [color]="sugus[0].color"></app-sugus>
+  <app-sugus *ngSwitchCase="sugus[1].color" [sabor]="sugus[1].sabor" [color]="sugus[1].color"></app-sugus>
+  <app-sugus *ngSwitchCase="sugus[2].color" [sabor]="sugus[2].sabor" [color]="sugus[2].color"></app-sugus>
+  <app-sugus *ngSwitchDefault></app-sugus>
+</div> -->
+
+<div [ngSwitch]="color">
+  <div *ngFor="let s of sugus">
+    <app-sugus *ngSwitchCase="s.color" [sabor]="s.sabor" [color]="s.color"></app-sugus>
+  </div>
+  <app-sugus *ngSwitchDefault></app-sugus>
+</div>

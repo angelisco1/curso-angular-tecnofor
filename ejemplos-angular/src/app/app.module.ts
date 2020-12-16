@@ -13,6 +13,12 @@ import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 import { DoblePipe } from './cmp-pipes/doble.pipe';
 import { HideWordsPipe } from './cmp-pipes/hide-words.pipe';
 import { ReversePipe } from './cmp-pipes/reverse.pipe';
+import { FiltroPipe } from './cmp-pipes/filtro.pipe';
+import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
+import { BlinkDirective } from './cmp-directivas/blink.directive';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ReactivosComponent } from './cmp-formularios/reactivos/reactivos.component';
+import { NormalesComponent } from './cmp-formularios/normales/normales.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { ReversePipe } from './cmp-pipes/reverse.pipe';
     CmpPipesComponent,
     DoblePipe,
     HideWordsPipe,
-    ReversePipe
+    ReversePipe,
+    FiltroPipe,
+    CmpDirectivasComponent,
+    BlinkDirective,
+    CmpFormulariosComponent,
+    ReactivosComponent,
+    NormalesComponent
   ],
   imports: [
     BrowserModule,

@@ -4,9 +4,18 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'hideWords'
 })
 export class HideWordsPipe implements PipeTransform {
+  // {{ 'hola mundo adios' | hideWords:['hola', 'adios'] }} => **** mundo *****
+  // RegExp
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+
+  transform(value: string, palabras: Array<string>): string {
+
+    palabras.forEach((palabra) => {
+      const regExp = new RegExp(palabra, 'gi')
+      value = value.replace(regExp, '*'.repeat(palabra.length))
+    })
+
+    return value;
   }
 
 }

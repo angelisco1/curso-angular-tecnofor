@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-cmp-pipes',
@@ -21,10 +22,30 @@ export class CmpPipesComponent implements OnInit {
     apellido: 'Villalba'
   }
 
+  otrasMascotas = [
+    'pelicano',
+    'petauro',
+    'canario'
+  ]
+
+  mensaje: Promise<string> = new Promise((res, rej) => {
+    setTimeout(() => {
+      res('El canario está en la jaula...')
+    }, 2000)
+  })
+
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  addMascota(nuevaMascota: string): void {
+    // console.log(nuevaMascota);
+    // this.mascotas.push(nuevaMascota)
+    // this.mascotas = [...this.mascotas, ...this.otrasMascotas, nuevaMascota]
+    this.mascotas = [...this.mascotas, nuevaMascota]
   }
 
 }

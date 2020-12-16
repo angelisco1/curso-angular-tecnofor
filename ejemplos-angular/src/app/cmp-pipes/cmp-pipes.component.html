@@ -5,6 +5,8 @@
 <p>{{ texto | lowercase }}</p>
 <p>{{ texto | titlecase }}</p>
 <p>{{ texto | slice:5:11 | uppercase }}</p>
+<p>{{ texto | slice:5:11 | uppercase | reverse }}</p>
+<p>{{ texto | hideWords:['lorem', 'AmEt'] }}</p>
 
 <p>Precio: {{ precio }}</p>
 <p>Precio: {{ precio | currency }}</p>
@@ -19,3 +21,15 @@
 <p>Persona: {{ persona }}</p>
 <p>Persona: {{ persona | json }}</p>
 <p>Persona: {{ persona | keyvalue | json }}</p>
+
+<p>Mensaje: {{ mensaje }}</p>
+<p>Mensaje: {{ mensaje | async }}</p>
+
+<input type="number" [(ngModel)]="precio">
+
+<!-- <input type="text" [(ngModel)]="nuevaMascota"> -->
+<input type="text" #inputMascota>
+<button type="button" (click)="addMascota(inputMascota.value)">Añadir mascota</button>
+
+<p>{{ mascotas | json }}</p>
+<p>{{ mascotas | filtro:'pe' | json }}</p>
