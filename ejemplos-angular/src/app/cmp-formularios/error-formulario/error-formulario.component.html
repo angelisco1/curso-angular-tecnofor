@@ -1,0 +1,6 @@
+<div [ngSwitch]="error">
+  <span *ngSwitchCase="'required'">El campo es obligatorio</span>
+  <span *ngSwitchCase="'minlength'">El campo tiene que tener como mínimo 4 letras</span>
+  <span *ngSwitchCase="'pattern'">El campo no es un email</span>
+  <span *ngSwitchDefault>Hay un error</span>
+</div>

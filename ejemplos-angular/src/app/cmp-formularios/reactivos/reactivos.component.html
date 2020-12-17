@@ -1,17 +1,26 @@
 <h3>Reactivos</h3>
 
-<form>
+<form [formGroup]="form" (ngSubmit)="registrate()">
   <div>
     <label for="username">Username</label>
-    <input type="text" id="username">
+    <input type="text" id="username" formControlName="u">
+    <ng-container *ngIf="form.controls.u.invalid && form.controls.u.dirty" >
+      <app-error-formulario [error]="form.controls.u.errors"></app-error-formulario>
+    </ng-container>
   </div>
   <div>
     <label for="email">Email</label>
-    <input type="text" id="email">
+    <input type="text" id="email" formControlName="email">
+    <ng-container *ngIf="form.controls.email.invalid && form.controls.email.dirty" >
+      <app-error-formulario [error]="form.controls.email.errors"></app-error-formulario>
+    </ng-container>
   </div>
   <div>
     <label for="password">Password</label>
-    <input type="password" id="password">
+    <input type="password" id="password" formControlName="password">
+    <ng-container *ngIf="form.controls.password.invalid && form.controls.password.dirty" >
+      <app-error-formulario [error]="form.controls.password.errors"></app-error-formulario>
+    </ng-container>
   </div>
-  <button type="submit">Registrate</button>
+  <button type="submit" [disabled]="form.invalid">Registrate</button>
 </form>

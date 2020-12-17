@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DatosService } from '../../cmp-servicios/datos.service';
 
 @Component({
   selector: 'app-cmp-luke',
@@ -8,11 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CmpLukeComponent implements OnInit {
 
   @Input() datosLeia;
+  datoRecibido: string = ''
+  datos: Array<string> = [];
 
-
-  constructor() { }
+  constructor(private datosServ: DatosService) { }
 
   ngOnInit(): void {
+    this.datos = this.datosServ.getDatos();
+    this.datosServ.datoEmitido.subscribe((dato) => {
+      this.datoRecibido = dato;
+    });
   }
 
 }

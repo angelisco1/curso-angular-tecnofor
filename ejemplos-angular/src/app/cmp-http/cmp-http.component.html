@@ -1,0 +1,8 @@
+<h2>Peticiones HTTP</h2>
+
+<input type="text" #nombreOferta>
+<button type="button" (click)="addOferta(nombreOferta.value)">Crear oferta de trabajo</button>
+
+<div>
+  <div *ngFor="let oferta of ofertas">{{oferta.nombre}}</div>
+</div>

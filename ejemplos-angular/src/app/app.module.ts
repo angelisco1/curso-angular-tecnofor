@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -19,6 +20,9 @@ import { BlinkDirective } from './cmp-directivas/blink.directive';
 import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
 import { ReactivosComponent } from './cmp-formularios/reactivos/reactivos.component';
 import { NormalesComponent } from './cmp-formularios/normales/normales.component';
+import { ErrorFormularioComponent } from './cmp-formularios/error-formulario/error-formulario.component';
+import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +42,19 @@ import { NormalesComponent } from './cmp-formularios/normales/normales.component
     BlinkDirective,
     CmpFormulariosComponent,
     ReactivosComponent,
-    NormalesComponent
+    NormalesComponent,
+    ErrorFormularioComponent,
+    CmpServiciosComponent,
+    CmpHttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

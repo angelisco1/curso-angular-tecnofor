@@ -3,15 +3,25 @@
 <form (ngSubmit)="registrate(form)" #form="ngForm">
   <div>
     <label for="username">Username</label>
-    <input type="text" id="username" name="username" #input1="ngModel" [(ngModel)]="datos.username">
+    <input type="text" id="username" name="username" #input1="ngModel" [ngModel]="datos.username" required>
+    <!-- <span *ngIf="input1.invalid && input1.dirty">Error: el campo es obligatorio</span> -->
+    <ng-container *ngIf="input1.invalid && input1.dirty" >
+      <app-error-formulario [error]="input1.errors"></app-error-formulario>
+    </ng-container>
   </div>
   <div>
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" [(ngModel)]="datos.email">
+    <input type="text" id="email" name="email" #input2="ngModel" [ngModel]="datos.email" required pattern="^\S+@\S+\.\S+$">
+    <ng-container *ngIf="input2.invalid && input2.dirty" >
+      <app-error-formulario [error]="input2.errors"></app-error-formulario>
+    </ng-container>
   </div>
   <div>
     <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="datos.password">
+    <input type="password" id="password" name="password" #input3="ngModel" [ngModel]="datos.password" required minlength="4">
+    <ng-container *ngIf="input3.invalid && input3.dirty" >
+      <app-error-formulario [error]="input3.errors"></app-error-formulario>
+    </ng-container>
   </div>
-  <button type="submit">Registrate</button>
+  <button type="submit" [disabled]="form.invalid">Registrate</button>
 </form>

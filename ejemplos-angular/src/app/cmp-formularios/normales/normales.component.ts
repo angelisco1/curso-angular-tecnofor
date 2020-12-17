@@ -9,8 +9,8 @@ export class NormalesComponent implements OnInit {
 
   datos = {
     username: '',
-    email: 'angel@gmail.com',
-    password: '',
+    email: 'angel@gmail',
+    password: '123',
   }
 
   constructor() { }
@@ -19,7 +19,7 @@ export class NormalesComponent implements OnInit {
   }
 
   registrate(form) {
-    console.log(form)
+    console.log(form.value)
     console.log('Registrado...')
   }
 

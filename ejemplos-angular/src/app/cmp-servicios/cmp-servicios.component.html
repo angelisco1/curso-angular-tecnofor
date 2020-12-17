@@ -1,0 +1,12 @@
+<h2>Servicios</h2>
+
+<button type="button" (click)="saludar()">Hola mundo!</button>
+
+<button type="button" (click)="sendDato(0)">Envia dato 1</button>
+<button type="button" (click)="sendDato(1)">Envia dato 2</button>
+<button type="button" (click)="sendDato(2)">Envia dato inexistente</button>
+<button type="button" (click)="addDato()">Añadir un nuevo dato</button>
+
+<ul>
+  <li *ngFor="let d of datos">{{d}}</li>
+</ul>

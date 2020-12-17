@@ -8,8 +8,8 @@ export class BlinkDirective {
   @HostBinding('style.backgroundColor') color;
   colorInicial: string = 'white';
   @Input('appBlink') colorFondo: string;
-  // intervalId: NodeJS.Timeout;
-  intervalId: any;
+  intervalId: NodeJS.Timeout;
+  // intervalId: any;
 
   constructor() {
   }
