@@ -29,7 +29,7 @@ export class OfertasTrabajoService {
     return this.http.post(`${this.URL}.json`, JSON.stringify(ofertaNueva))
   }
 
-  deleteOferta() {
-
+  deleteOferta(id: string) {
+    return this.http.delete(`${this.URL}/${id}.json`);
   }
 }

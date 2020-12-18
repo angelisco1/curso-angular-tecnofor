@@ -1,0 +1,12 @@
+<h2>Routing</h2>
+
+<a [routerLink]="['/']">Usuarios</a>
+<a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a>
+<a [routerLink]="['/usuarios']">Usuarios</a>
+
+<router-outlet></router-outlet>
+<hr>
+<hr>
+<a [routerLink]="[{outlets: {'region-secundaria': 'auxiliar'}}]">Auxiliar</a>
+<a [routerLink]="[{outlets: {'region-secundaria': 'auxiliar2'}}]">Auxiliar 2</a>
+<router-outlet name="region-secundaria"></router-outlet>

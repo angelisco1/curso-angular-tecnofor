@@ -4,5 +4,11 @@
 <button type="button" (click)="addOferta(nombreOferta.value)">Crear oferta de trabajo</button>
 
 <div>
-  <div *ngFor="let oferta of ofertas">{{oferta.nombre}}</div>
+  <div *ngFor="let oferta of ofertas">
+    <span>{{oferta.nombre}}</span>
+    <button type="button" (click)="eliminar(oferta.id)">Eliminar</button>
+  </div>
 </div>
+
+<button type="button" (click)="toggleSuscripciones()">Toggle suscripciones</button>
+<app-suscripciones *ngIf="mostrarSuscripciones"></app-suscripciones>

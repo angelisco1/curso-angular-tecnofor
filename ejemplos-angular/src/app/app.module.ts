@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -23,6 +23,14 @@ import { NormalesComponent } from './cmp-formularios/normales/normales.component
 import { ErrorFormularioComponent } from './cmp-formularios/error-formulario/error-formulario.component';
 import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { SuscripcionesComponent } from './cmp-http/suscripciones/suscripciones.component';
+import { AuthInterceptor } from './cmp-http/auth.interceptor';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { AppRoutingModule } from './cmp-routing/app.routes';
+import { InfoComponent } from './cmp-routing/info/info.component';
+import { ErrorComponent } from './cmp-routing/error/error.component';
 
 @NgModule({
   declarations: [
@@ -45,15 +53,24 @@ import { CmpHttpComponent } from './cmp-http/cmp-http.component';
     NormalesComponent,
     ErrorFormularioComponent,
     CmpServiciosComponent,
-    CmpHttpComponent
+    CmpHttpComponent,
+    SuscripcionesComponent,
+    CmpRoutingComponent,
+    UsuariosComponent,
+    NuevoUsuarioComponent,
+    InfoComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
