@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor() {}
+
   ngOnInit() {
     window.sessionStorage.setItem('Auth', Math.random()+'')
   }

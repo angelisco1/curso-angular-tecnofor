@@ -31,6 +31,7 @@ import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario
 import { AppRoutingModule } from './cmp-routing/app.routes';
 import { InfoComponent } from './cmp-routing/info/info.component';
 import { ErrorComponent } from './cmp-routing/error/error.component';
+import { TarjetaCreditoModule } from './tarjeta-credito/tarjeta-credito.module';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ErrorComponent } from './cmp-routing/error/error.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TarjetaCreditoModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
